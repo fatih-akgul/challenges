@@ -8,6 +8,7 @@ from game import _validation
 NUM_LETTERS = 7
 TEST_WORDS = ('bob', 'julian', 'pybites', 'quit', 'barbeque')
 
+
 class TestGame(unittest.TestCase):
 
     def setUp(self):
@@ -47,6 +48,7 @@ class TestGame(unittest.TestCase):
         self.assertRaises(ValueError, _validation, word, draw)
         word = 'GARETTA'
         self.assertRaises(ValueError, _validation, word, draw)
+
 
 if __name__ == "__main__":
    unittest.main() 
