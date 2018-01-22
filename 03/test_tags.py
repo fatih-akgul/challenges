@@ -25,9 +25,12 @@ class test_tags(unittest.TestCase):
 
     def test_get_tags(self):
         self.assertEqual(len(self.tags), 189)
+        sorted_set = list(set(self.tags))
+        sorted_set.sort()
         self.assertEqual(len(set(self.tags)), 100)
         self.assertEqual(self.tags.count('collections'), 4)
         self.assertEqual(self.tags.count('python'), 10)
+        self.assertEqual(self.tags.count('github'), 5)
 
     def test_get_top_tags(self):
         top_tags = dict(get_top_tags(self.tags)).items()
